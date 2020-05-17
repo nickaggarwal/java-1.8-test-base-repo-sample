@@ -1,17 +1,37 @@
-# Spring Boot Maven
+# JAVA HUT Evaluation Practice
 
-PROJECT START STEPS:
+Please create unit tests for SimpleClass.java, ModerateClass.java, HardClass.java.
 
-    Pre-requisites:
-    1. Java must be installed
-    2. Install maven module (https://maven.apache.org/install.html).
+Leaking code and coverage to classes used by ComponentReportObj may result in poor quality tests and/or errors.
+A good UT should isolate the code tested.
 
-    Steps:
-    1. To run this application, do the following:
-        1.a. Go to the project root directory.
-        1.b. Run the following commands in the terminal/command line to build the app:
-            - mvn clean install
-        1.c. Run the following command(s) in the terminal/command line to run the app:
-            - java -jar ./target/spring-boot-in-docker.jar
+## Project Frameworks
 
-    2. Go to http://localhost:8080/ in your browser to view it.
+* Maven
+
+## Test Frameworks
+
+* JUnit
+* Mockito
+* PowerMock
+
+## Build Instructions
+
+`mvnw.bat clean test`
+
+## Instructions
+Open the project in IntelliJ IDEA
+You need to increase unit test coverage to 100% for the below methods
+
+Classes:  SimpleClass.java, ModerateClass.java, HardClass.java
+Methods: All
+
+## Required Tools
+Please note that, all tools are already pre installed on the host.
+
+* Maven
+* Gradle
+* Java
+* IntelliJ IDEA
+
+You can review the solution provided in practice answers project, but better to attempt the unit tests yourself first.
