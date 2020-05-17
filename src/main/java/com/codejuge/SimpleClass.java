@@ -1,27 +1,12 @@
-package com.crossover;
+package com.codejudge;
 
-import com.crossover.services.ExternalRatingApprovalService;
-import com.crossover.services.NotificationService;
-
-public class ModerateClass {
-
-    private int lastRating;
-    private NotificationService notificationService;
-    private ExternalRatingApprovalService externalRatingApprovalService;
-
-    public ModerateClass() {
-
-    }
+public class SimpleClass {
 
     public String createRatingString(int rating, int ratingCeiling) {
         StringBuilder ratingStr = new StringBuilder();
 
         if (rating > ratingCeiling) {
             throw new IllegalArgumentException("Cannot be over the hard ceiling");
-        }
-
-        if (!externalRatingApprovalService.isApproved(rating)) {
-            return "NOT-APP";
         }
 
         if (rating == ratingCeiling) {
@@ -35,11 +20,6 @@ public class ModerateClass {
             }
         }
         ratingStr.append(rating);
-        if (rating == lastRating) {
-            ratingStr.append("-CACHED");
-        }
-
-        this.notificationService.notify(rating);
 
         return ratingStr.toString();
     }
