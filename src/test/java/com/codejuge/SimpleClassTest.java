@@ -18,6 +18,28 @@ public class SimpleClassTest {
     @Test
     public void shouldFail_WhenRatingIsHigherThanCeiling() {
         exceptionRule.expect(IllegalArgumentException.class);
+
         testClass.createRatingString(2, 1);
+    }
+
+    @Test
+    public void shouldGiveTopRating_WhenRatingIsEqualToCeiling() {
+        String rating = testClass.createRatingString(2, 2);
+
+        Assert.assertEquals("TOP+2", rating);
+    }
+
+    @Test
+    public void shouldGiveHighRating_WhenRatingIsGreaterThanOrEqualTo_HalfCeiling() {
+        String rating = testClass.createRatingString(2, 4);
+
+        Assert.assertEquals("HIGH=2", rating);
+    }
+
+    @Test
+    public void shouldGiveLOWRating_WhenRatingIsLowerThanTo_HalfCeiling() {
+        String rating = testClass.createRatingString(1, 4);
+
+        Assert.assertEquals("LOW-1", rating);
     }
 }
